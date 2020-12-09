@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'Dashboard',
     'Profile',
+    'Register',
 ]
 
 SITE_ID = 1
