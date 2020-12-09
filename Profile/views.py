@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.authtoken.views import ObtainAuthToken
 
 
 #-------------MODELOS-------------
@@ -17,7 +18,7 @@ from Profile.serializers import ProfilePersonSerializer
 
 #-----------------VIEWS-------------
 
-class ProfileModelView(APIView):
+class ProfileModelView(ObtainAuthToken):
 
     def post(self, request, format=None):
         serializer = ProfileModelSerializers(data = request.data, contex = {'request':request})
@@ -27,7 +28,7 @@ class ProfileModelView(APIView):
         #response = ResponseJson("Error")
         return Response("Error Formato")
 
-class ProfilePersonsView(APIView):
+class ProfilePersonsView(ObtainAuthToken):
 
     def post(self, request, format=None):
         serializer = ProfilePersonSerializer(data = request.data, context = {'request':request})
