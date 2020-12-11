@@ -21,7 +21,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['back-web-ids-oltra.herokuapp.com', '54.175.108.99']
+ALLOWED_HOSTS = ['http://web-franciscoback.ddns.net/', '54.175.108.99']
 
 
 # Application definition
